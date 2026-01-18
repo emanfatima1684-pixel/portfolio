@@ -232,12 +232,10 @@ header ul a:hover{
   .scroll-down::before {
     top: 30%;
     animation-delay: 0.5s;
-    /* animation: scroll-down 1s ease-in-out infinite; */
   }
   
   @keyframes scroll-down {
     0% {
-      /* top:20%; */
       opacity: 0;
     }
     30% {
@@ -493,7 +491,6 @@ header ul a:hover{
 
 @keyframes hover-animation {
   0% {
-    /* top:20%; */
     box-shadow: 0 0 5px rgb(255, 255, 255);
     transform: translate(100%, 50%) rotate(30deg);
   }
@@ -507,12 +504,14 @@ header ul a:hover{
 
 
 
-/* Skills section */
+/* Skills section - FIXED */
 .skills-section{
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
+    width: 100%;
+    min-height: 90vh;
 }
 
 .skills-box{
@@ -529,6 +528,8 @@ header ul a:hover{
 .skills-image{
     width: 70%;
     mix-blend-mode:difference;
+    position: relative;
+    z-index: 1;
 }
 
 .Designer{
@@ -539,16 +540,25 @@ header ul a:hover{
     top: 25%;
     left: 5%;
     max-width: 300px;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
 }
 
 .Designer h1{
     font-size: 50px;
     display: flex;
     align-items: center;
+    margin: 0 0 15px 0;
+    color: #b888ff;
 }
 
 .Designer p{
     line-height: 23px;
+    color: lightgray;
+    margin: 0;
 }
 
 
@@ -560,22 +570,28 @@ header ul a:hover{
     top: 25%;
     right: 5%;
     max-width: 300px;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
 }
 
 .coder h1{
     font-size: 50px;
     display: flex;
     align-items: center;
+    margin: 0 0 15px 0;
+    color: #6ba3ff;
 }
 
 .coder p{
     line-height: 23px;
+    color: lightgray;
+    margin: 0;
 }
 
-
-
 .coder-text{
-
     font-size: 50px;
 }
 
@@ -814,99 +830,17 @@ header ul a:hover{
     border-color: rgba(114, 161, 222, 0.6);
 }
 
-/* Responsive Design */
-@media screen and (max-width: 700px) {
-    .contact-section {
-        width: 90%;
-        padding: 80px 0;
-    }
-
-    .contact-box {
-        padding: 40px 30px;
-    }
-
-    .contact-box h2 {
-        font-size: 32px;
-        margin-bottom: 30px;
-    }
-
-    .contact-box p {
-        font-size: 16px;
-        padding: 15px 20px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .contact-box p i {
-        font-size: 20px;
-        min-width: 40px;
-        min-height: 40px;
-    }
-
-    .social-icons {
-        gap: 15px;
-        margin-top: 40px;
-    }
-
-    .social-icons a {
-        width: 50px;
-        height: 50px;
-    }
-
-    .social-icons a i {
-        font-size: 22px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .contact-box {
-        padding: 30px 20px;
-    }
-
-    .contact-box h2 {
-        font-size: 28px;
-        margin-bottom: 25px;
-    }
-
-    .contact-box p {
-        font-size: 14px;
-        padding: 12px 15px;
-        margin: 20px 0;
-    }
-
-    .contact-box p i {
-        font-size: 18px;
-        min-width: 36px;
-        min-height: 36px;
-        padding: 8px;
-    }
-
-    .social-icons {
-        gap: 12px;
-        margin-top: 35px;
-    }
-
-    .social-icons a {
-        width: 45px;
-        height: 45px;
-    }
-
-    .social-icons a i {
-        font-size: 20px;
-    }
-}
 .footer{
     display: flex;
     justify-content: space-between;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
+    position: relative;
+    width: 100%;
     height: 70px;
     background-color: rgba(255, 255, 255, 0.121);
     z-index: 999;
     padding: 0 3rem;
+    align-items: center;
+    margin-top: 100px;
 }
 
 
@@ -1033,7 +967,7 @@ header ul a:hover{
     transition: 0.5s;
 }
 
-/* Sidebar Open ANimation */
+/* Sidebar Open Animation */
 .sidebar.open-sidebar{
     animation: openSideBarAnimation 1.5s forwards;
 }
@@ -1047,7 +981,7 @@ header ul a:hover{
     }
 }
 
-/* Sidebar close ANimation */
+/* Sidebar close Animation */
 
 .sidebar.close-sidebar{
     animation: closeSideBarAnimation 1.5s forwards;
@@ -1130,7 +1064,6 @@ header ul a:hover{
 
     .card video{
         height: 60%;
-
         margin-top: 5%;
     }
 
@@ -1139,8 +1072,22 @@ header ul a:hover{
         scale: 0.8;
     }
 
-    .contact-section .section-title {
-        left: 30%;
+    .Designer{
+        left: 3%;
+        max-width: 250px;
+    }
+
+    .Designer h1{
+        font-size: 40px;
+    }
+
+    .coder{
+        right: 3%;
+        max-width: 250px;
+    }
+
+    .coder h1{
+        font-size: 40px;
     }
 }
 
@@ -1191,8 +1138,6 @@ header ul a:hover{
         height: 200px;
         top: 5%;
     }
-
-
 
     .info-cards{
         grid-template-columns: auto;
@@ -1248,227 +1193,3 @@ header ul a:hover{
         margin-left: 25%;
         gap: 30px;
     }
-    
-    .project-vidbox{
-        min-width: 200px;
-    }
-
-    .project-info{
-        width: 85%;
-    }
-
-    .project-info h1{
-        text-wrap: nowrap;
-    }
-
-    .project-info p{
-        max-width: 300px;
-    }
-
-    .Designer{
-        top: 15%;
-        left: 18%;
-    }
-
-    .Designer h1{
-        margin-bottom: 0;
-        margin-top: 70px;
-    }
-
-    .coder{
-        top: 50%;
-        left: 18%;
-    }
-
-    .coder h1{
-        margin-bottom: 0;
-    }
-
-    .slider .list .item img{
-        width: 70%;
-    }
-
-    .contact-section{
-        flex-direction: column;
-        margin-top: 100px;
-        margin-bottom: 50px;
-    }
-
-    .footer{
-        font-size: 10px;
-    }
-
-    .social-box{
-        margin-left: -90px;
-    }
-}
-
-
-@media screen and (max-width: 480px) {
-
-    .hero .skills-video-box {
-        display: none;
-        
-    }
-
-    .blackhole-box {
-        overflow: hidden;
-    }
-
-    .blackhole-box video {
-        width: 140%;
-        margin-top: -27%;
-
-    }
-
-    .left {
-        scale: 0.9;
-        margin-left: -30px;
-    }
-
-    .left h2 {
-        font-size: 20px;
-    }
-
-    .hero {
-        scale: 0.9;
-    }
-
-    .hero-info{
-        bottom: 15%;
-    }
-
-    .hero-info h1{
-        font-size: 35px;
-    }
-
-    .scroll-down{
-        bottom: 15%;
-        left: 60%;
-    }
-
-    .section-title {
-        font-size: 25px;
-    }
-
-    .info-cards{
-        display: flex;
-        flex-direction: column;
-    }
-
-    .card {
-        min-height: 20rem;
-    }
-
-    .card h1{
-        bottom: 30%;
-        font-size: 5px;
-    }
-
-    .project-card {
-        height: 50%;
-    }
-
-    .project-info p{
-        margin-bottom: 15px;
-    }
-
-    .project-info{
-        margin-left: -80px;
-    }
-
-    .skills-box{
-        height: 120vh;
-        margin-right: 30px;
-    }
-
-    .slider{
-        bottom: 0%;
-    }
-
-    .contact-section{
-        scale: 0.9;
-        height: 120vh;
-    }
-
-    .contact-section .section-title {
-        top: -30px;
-        left: 25%;
-    }
-
-    .footer{
-        padding: 15px;
-    }
-
-    .footer h1{
-        max-width: 150px;
-    }
-
-    .footer .box-icons{
-        gap: 10px;
-    }
-
-
-}
-/* ----------------------------------------- */
-/* ⚡ MOBILE FIXES (no design change) */
-/* ----------------------------------------- */
-
-@media (max-width: 480px) {
-
-    /* 1. Replace unsafe vh with dvh on mobile */
-    .hero,
-    .skills-section,
-    .skills-box,
-    .my-project,
-    .contact-section {
-        min-height: 100dvh !important;
-        height: auto;
-    }
-
-    /* 2. Prevent text from overflowing */
-    .project-info h1,
-    .project-info p,
-    .section-title,
-    .coder h1,
-    .Designer h1 {
-        white-space: normal !important;
-    }
-
-    /* 3. Remove negative margins that break mobile layout */
-    .project-info,
-    .project-card {
-        margin-left: 0 !important;
-    }
-
-    /* 4. Fix slider image sizing so icons stay visible */
-    .slider .list .item img {
-        width: 80px !important;
-        height: 80px !important;
-        object-fit: contain;
-    }
-
-    /* 5. Stop blurred scaling that causes mobile distortion */
-    .my-project {
-        scale: 1 !important;
-    }
-
-    /* 6. Fix sidebar alignment on small screens */
-    .sidebar {
-        top: auto !important;
-        bottom: 0 !important;
-        transform: none !important;
-    }
-
-    /* 7. Ensure all images are responsive */
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    /* 8. Extra spacing so elements don't pile up */
-    section,
-    .container {
-        padding-bottom: 30px;
-    }
-}
